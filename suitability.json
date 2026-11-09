@@ -1,0 +1,8 @@
+{
+  "format": 1,
+  "jobs": ["store-update"],
+  "profiles": [
+    { "id": "any", "load": {}, "cost": "none", "regions": ["any"], "compliance": [] }
+  ],
+  "notes": "Pure library; network access is through the caller's injected fetch function. No hosted service, account or measured load."
+}

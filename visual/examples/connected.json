@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "store-update-connected",
+  "title": "Store updates: connected consumer",
+  "status": "example",
+  "view": "component",
+  "focus": "component",
+  "definitions": [
+    {
+      "id": "ourapps-ae.store-update",
+      "name": "Store updates",
+      "kind": "component",
+      "status": "example",
+      "package": "ourapps-ae/store-update",
+      "version": "0.4.0",
+      "ports": [
+        {
+          "id": "updates",
+          "name": "Store updates",
+          "direction": "output",
+          "kind": "interface",
+          "type": "ae/updates",
+          "version": "1.0.0"
+        }
+      ],
+      "settings": [
+        {
+          "id": "enabled",
+          "name": "Enabled",
+          "type": "boolean",
+          "required": false,
+          "secret": false,
+          "default": true
+        },
+        {
+          "id": "inviteAddress",
+          "name": "Inviteaddress",
+          "type": "string",
+          "required": false,
+          "secret": false
+        }
+      ]
+    },
+    {
+      "id": "consumer",
+      "name": "Example application consumer",
+      "kind": "application",
+      "status": "example",
+      "revision": "0.1.0",
+      "ports": [
+        {
+          "id": "updates",
+          "name": "Store updates",
+          "direction": "input",
+          "kind": "interface",
+          "type": "ae/updates",
+          "version": "1.0.0",
+          "required": true,
+          "cardinality": "one"
+        }
+      ],
+      "settings": []
+    }
+  ],
+  "instances": [
+    {
+      "id": "component",
+      "name": "Store updates",
+      "definition": "ourapps-ae.store-update",
+      "configuration": {}
+    },
+    {
+      "id": "consumer",
+      "name": "Example consumer",
+      "definition": "consumer",
+      "configuration": {}
+    }
+  ],
+  "connections": [
+    {
+      "source": {
+        "instance": "component",
+        "port": "updates"
+      },
+      "target": {
+        "instance": "consumer",
+        "port": "updates"
+      }
+    }
+  ]
+}

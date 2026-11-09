@@ -1,0 +1,35 @@
+{
+  "id": "ourapps-ae.store-update",
+  "name": "Store updates",
+  "kind": "component",
+  "status": "example",
+  "package": "ourapps-ae/store-update",
+  "version": "0.4.0",
+  "ports": [
+    {
+      "id": "updates",
+      "name": "Store updates",
+      "direction": "output",
+      "kind": "interface",
+      "type": "ae/updates",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": [
+    {
+      "id": "enabled",
+      "name": "Enabled",
+      "type": "boolean",
+      "required": false,
+      "secret": false,
+      "default": true
+    },
+    {
+      "id": "inviteAddress",
+      "name": "Inviteaddress",
+      "type": "string",
+      "required": false,
+      "secret": false
+    }
+  ]
+}

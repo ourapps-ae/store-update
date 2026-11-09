@@ -1,0 +1,30 @@
+{
+  "accepted": [
+    {"name":"preserve complete opaque identifiers rather than truncating prefixes", "cases":[
+      ["https://store.example/l/Example1-other", "https://store.example/api/public/links/Example1-other/latest"],
+      ["https://store.example/l/Example1_other", "https://store.example/api/public/links/Example1_other/latest"],
+      ["https://store.example/l/-opaque_id.v2~", "https://store.example/api/public/links/-opaque_id.v2~/latest"]
+    ]},
+    {"name":"accept synthetic current-format identifier and both schemes", "cases":[
+      ["https://store.example/l/0123456789abcdef01234567", "https://store.example/api/public/links/0123456789abcdef01234567/latest"],
+      ["http://store.example:8080/l/Example1-other", "http://store.example:8080/api/public/links/Example1-other/latest"],
+      ["https://store.example/l/opaque%20id", "https://store.example/api/public/links/opaque%20id/latest"]
+    ]},
+    {"name":"omit query and fragment suffixes from the derived target", "cases":[
+      ["https://store.example/l/Example1-other?source=fixture#install", "https://store.example/api/public/links/Example1-other/latest"],
+      ["http://store.example/l/Example1_other#install", "http://store.example/api/public/links/Example1_other/latest"],
+      ["https://store.example/l/Example1?next=/elsewhere", "https://store.example/api/public/links/Example1/latest"]
+    ]}
+  ],
+  "rejected": [
+    "https://store.example/l/Example1/other", "https://store.example/l/Example1/",
+    "https://store.example/l/Example1/../other", "https://store.example/l/Example1%2Fother",
+    "https://store.example/l/Example1%2fother", "https://store.example/l/Example1%5Cother",
+    "https://store.example/l/Example1\\other", "https://store.example/l/%2e%2e",
+    "https://store.example/l/Example1%", "https://store.example/l/Example1%00",
+    "https://user:password@store.example/l/Example1", "https://user@store.example/l/Example1",
+    "https://@store.example/l/Example1", "https://store.example/l/", "https://store.example/other/Example1",
+    "ftp://store.example/l/Example1", "https:///store.example/l/Example1",
+    "https://store.example:99999/l/Example1", " https://store.example/l/Example1", "", "not an address"
+  ]
+}

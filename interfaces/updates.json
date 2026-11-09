@@ -1,0 +1,37 @@
+{
+  "id": "updates",
+  "type": "ae/updates",
+  "version": "1.0.0",
+  "operations": {
+    "updateUrlFor": {
+      "arguments": [
+        "inviteUrl:string|undefined"
+      ],
+      "returns": "string|null (https or http invitation address of the form /l/<one opaque segment>; the complete segment is kept; extra path segments, credentials, encoded separators and malformed addresses give null)"
+    },
+    "isNewer": {
+      "arguments": [
+        "latest:string",
+        "current:string"
+      ],
+      "returns": "boolean"
+    },
+    "fetchUpdate": {
+      "arguments": [
+        "url:string",
+        "fetcher:typeof fetch"
+      ],
+      "returns": "Promise<{version:string,url:string}|null>"
+    },
+    "updateAddress": {
+      "arguments": [
+        "settings:{enabled?:boolean,inviteAddress?:string}"
+      ],
+      "returns": "string|null (updateUrlFor of inviteAddress; null when enabled is false)"
+    }
+  },
+  "settings": {
+    "enabled": "boolean, default true",
+    "inviteAddress": "address of the store invitation link (optional)"
+  }
+}
