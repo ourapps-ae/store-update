@@ -1,6 +1,6 @@
 # Store updates instructions
 
-Package `ourapps-ae/store-update` version `0.5.0`. It provides the `updates` interface (type `ae/updates`, version 1.0.0) and requires nothing.
+Package `ourapps-ae/store-update` version `0.5.1`. It provides the `updates` interface (type `ae/updates`, version 1.0.0) and requires nothing.
 
 ## For the agent
 
