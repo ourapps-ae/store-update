@@ -1,6 +1,6 @@
 # Source mapping
 
-Reference revision: `19905b75dbea89fbfd424d67fe26c81aaed0e018` (frozen McInPoker, read with `git show` in `mcinpoker/`; the OurPoker recipe now imports this component). `implementation/server/store.ts` is the invitation parser with `updateAddress`.
+Reference revision: `19905b75dbea89fbfd424d67fe26c81aaed0e018` (frozen McInPoker, repository `george-mcintyre/mcinpoker`; the OurPoker recipe imports this component). `implementation/server/store.ts` is the invitation parser with `updateAddress`.
 
 | Implementation file | Frozen source and lines | Generalised | Left behind |
 |---|---|---|---|

@@ -24,8 +24,8 @@ From the component directory:
 
 - `node --test tests/web.test.ts` (required)
 - `node --test tests/regression.test.ts` (required; invitation path regression)
-- `python3 tests/native.py apple` (needs swiftc 6.4.2)
-- `python3 tests/native.py android` (needs kotlinc 2.2.0 and java 26.0.1; not runnable where kotlinc is missing)
-- `python3.12 -B tools/check_component.py components/store-update` from the workspace root.
+- `python3 tests/native.py apple` (needs swiftc 6.4)
+- `python3 tests/native.py android` (needs kotlinc 2.2 and java 26.0; not runnable where kotlinc is missing)
+- `python3 -m aepm review <digest> --store STORE --policy POLICY --trusted --allow-network` checks an archive fetched with `python3 -m aepm fetch ourapps-ae/store-update@VERSION --store STORE --from https://ourapps.app` and runs its suites.
 
 In the application, serve a store document with a higher version and confirm the prompt appears; serve a lower or equal version, an error status or invalid JSON and confirm no prompt appears.
