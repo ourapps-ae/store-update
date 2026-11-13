@@ -13,9 +13,21 @@
       "template": false
     },
     {
+      "destination": "components/store-update/server/index.ts",
+      "executable": false,
+      "source": "implementation/server/index.ts",
+      "template": false
+    },
+    {
       "destination": "components/store-update/server/store.ts",
       "executable": false,
       "source": "implementation/server/store.ts",
+      "template": false
+    },
+    {
+      "destination": "components/store-update/web/index.ts",
+      "executable": false,
+      "source": "implementation/web/index.ts",
       "template": false
     },
     {
@@ -31,7 +43,9 @@
     "writes": [
       "components/store-update/android/src/main/java/ae/update/Version.kt",
       "components/store-update/apple/Sources/Version.swift",
+      "components/store-update/server/index.ts",
       "components/store-update/server/store.ts",
+      "components/store-update/web/index.ts",
       "components/store-update/web/update.ts"
     ]
   },
@@ -105,7 +119,15 @@
     },
     {
       "executable": false,
+      "path": "implementation/server/index.ts"
+    },
+    {
+      "executable": false,
       "path": "implementation/server/store.ts"
+    },
+    {
+      "executable": false,
+      "path": "implementation/web/index.ts"
     },
     {
       "executable": false,
